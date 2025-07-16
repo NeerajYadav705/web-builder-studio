@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Target, Zap, Heart, Code, Palette, Rocket } from 'lucide-react';
 
@@ -13,7 +12,7 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '50+', label: 'Projects Delivered' },
+    { number: '5+', label: 'Projects Delivered' },
     { number: '100%', label: 'Client Satisfaction' },
     { number: '24/7', label: 'Support Available' },
     { number: '2024', label: 'Founded' },
@@ -157,22 +156,7 @@ const About = () => {
               viewport={{ once: true }}
               className="space-y-8 text-lg text-gray-300 leading-relaxed"
             >
-              <p>
-                Web Builder Studio started in 2024 with a simple belief: every brand deserves 
-                a website that's as bold and unique as their vision.
-              </p>
-              
-              <p>
-                We're a young, hungry startup that understands the challenges of building 
-                something from scratch. That's why we're passionate about helping other 
-                entrepreneurs and creative brands establish their digital presence.
-              </p>
-              
-              <p>
-                Our approach is different. We don't just follow trends—we set them. 
-                We don't just build websites—we create digital experiences that convert 
-                visitors into customers and customers into brand advocates.
-              </p>
+              <p> Web Builder Studio began not as a company, but as a shared dream between two friends who refused to settle for the ordinary. We’ve been inseparable since college—first studying diploma together, then pursuing B.Tech from the same campus. People often thought we were brothers, always preparing for placements like everyone else. But deep down, we knew our dream was something bigger. </p> <p> We didn’t want to just look for jobs. We wanted to create them. To build something meaningful that could empower others, not just ourselves. That’s how Web Builder Studio came to life in 2024: born from late-night brainstorming sessions, countless cups of tea, and a stubborn belief that we could make a difference. </p> <p> Our vision isn’t just about designing beautiful websites—it’s about helping brands and fellow entrepreneurs turn their ideas into powerful digital experiences. We’re here to prove that two friends with a shared passion and relentless determination can do more than follow trends—they can set them. </p> <p> At Web Builder Studio, we don’t just build websites. We build opportunities, stories, and communities—transforming visitors into loyal customers and businesses into bold brands. </p>
               
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}

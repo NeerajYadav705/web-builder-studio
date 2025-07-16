@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MessageCircle, User, Briefcase } from 'lucide-react';
+import { Send, Mail, MessageCircle, User, Briefcase, Phone } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -236,15 +236,20 @@ const Contact = () => {
                 </p>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <Mail size={20} className="text-gray-400" />
-                    <span>hello@webbuilderstudio.com</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <MessageCircle size={20} className="text-gray-400" />
-                    <span>Available for quick chats</span>
-                  </div>
-                </div>
+  <div className="flex items-center gap-4">
+    <Mail size={20} className="text-gray-400" />
+    <span>hello@webbuilderstudio.com</span>
+  </div>
+  <div className="flex items-center gap-4">
+    <MessageCircle size={20} className="text-gray-400" />
+    <span>Available for quick chats</span>
+  </div>
+  <div className="flex items-center gap-4">
+    <Phone size={20} className="text-gray-400" />  {/* <-- Add this */}
+    <span>9719 351 076 , 7906 293 268</span>                 {/* <-- And this */}
+  </div>
+</div>
+
               </div>
 
               <div>

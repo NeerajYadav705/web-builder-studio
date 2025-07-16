@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -13,39 +13,38 @@ const Home = () => {
     { title: 'E-commerce & Web Apps', icon: '✦' },
     { title: 'Brand Identity', icon: '✦' },
   ];
-
-  const portfolioItems = [
-    { 
-      title: 'TechFlow', 
-      type: 'SaaS Platform',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    { 
-      title: 'Minimalist Co.', 
-      type: 'E-commerce',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    { 
-      title: 'Creative Hub', 
-      type: 'Portfolio',
-      image: 'https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    { 
-      title: 'StartupX', 
-      type: 'Landing Page',
-      image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    { 
-      title: 'ArtSpace', 
-      type: 'Gallery',
-      image: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-    { 
-      title: 'FinanceApp', 
-      type: 'Dashboard',
-      image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=400'
-    },
-  ];
+const portfolioItems = [
+  { 
+    title: 'Dhaniram Paints', 
+    type: 'Corporate Website',
+    image: './assets/dhanirampaints.png'
+  },
+  { 
+    title: 'Anshul Wallah Travel', 
+    type: 'Travel Website',
+    image: './assets/anshul.png'
+  },
+  { 
+    title: 'Anita Engineering Works', 
+    type: 'Industrial Website',
+    image: './assets/aew.png'
+  },
+  { 
+    title: 'Process Safety Visuals Web', 
+    type: 'B2B SaaS / Consulting',
+    image: './assets/process.png'
+  },
+  { 
+    title: 'Affordable Street Eats', 
+    type: 'Local Discovery Platform',
+    image: './assets/streetfoods.png'
+  },
+   { 
+    title: 'Apex Consultancy', 
+    type: 'Business Consulting Website',
+    image: './assets/apex.png'
+  },
+];
 
   const testimonials = [
     { text: "They nailed our website.", client: "Client A" },

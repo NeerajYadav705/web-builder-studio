@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Mail, MessageCircle, ArrowUp } from 'lucide-react';
@@ -62,7 +61,7 @@ const Footer = () => {
                 className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
               >
                 <Mail size={18} />
-                <span className="text-sm">hello@webbuilderstudio.com</span>
+                <span className="text-sm">webbuildersstudio9@gmail.com</span>
               </motion.a>
             </div>
           </motion.div>
@@ -167,7 +166,7 @@ const Footer = () => {
             Ready to Build Something Amazing?
           </h3>
           <p className="text-gray-400 mb-8 max-w-md mx-auto">
-            Let's discuss your project and bring your vision to life.
+            Let's discuss your project and bring your vision to life
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -197,7 +196,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-400 text-sm"
             >
-              © 2024 Web Builder Studio. All rights reserved.
+              © 2025 Web Builder Studio. All rights reserved.
             </motion.div>
             
             <div className="flex items-center gap-6">

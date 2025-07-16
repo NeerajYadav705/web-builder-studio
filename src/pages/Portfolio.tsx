@@ -4,81 +4,87 @@ import { ExternalLink, Github, X } from 'lucide-react';
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+const projects = [
+  {
+    id: 1,
+    title: 'Dhaniram Paints',
+    type: 'Corporate Website',
+    year: '2024',
+      image: './assets/dhanirampaints.png', // local image in public/images/
+    liveUrl: 'https://www.dhanirampaint.com/',
+    description: 'A vibrant corporate website built for Dhaniram Paints to showcase their premium paint products and brand story.',
+    technologies: ['Next.js', 'Tailwind CSS', 'JavaScript'],
+    features: ['Product catalog', 'Responsive design', 'Contact forms', 'SEO optimization'],
+    challenge: 'Presenting a large range of products while keeping the design clean and fast-loading.',
+    solution: 'Used Next.js static generation, optimized images, and modular Tailwind components to ensure speed and maintainability.',
+  },
+  {
+    id: 2,
+    title: 'Anshul Wallah Travel',
+    type: 'Travel Website',
+    year: '2024',
+      image: './assets/anshul.png', // local image in public/images/
+    liveUrl: 'https://www.dhanirampaint.com/',
+    description: 'A sleek and simple travel website built for a local travel agency, highlighting tours, destinations, and packages.',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    features: ['Tour listings', 'Contact form', 'Photo gallery', 'Mobile-friendly layout'],
+    challenge: 'Creating an engaging design on a purely static stack without modern frameworks.',
+    solution: 'Focused on clean HTML structure, modern CSS effects, and lightweight JS interactions to ensure usability and appeal.',
+  },
+  {
+    id: 3,
+    title: 'Anita Engineering Works',
+    type: 'Industrial Website',
+    year: '2024',
+     image: './assets/aew.png', // local image in public/images/
+    liveUrl: 'https://www.dhanirampaint.com/',
+    description: 'Corporate website designed for a manufacturer specializing in industrial nuts and fasteners, showcasing their products and expertise.',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    features: ['Product catalog', 'About & history pages', 'Inquiry form', 'Clean responsive design'],
+    challenge: 'Conveying industrial reliability and brand heritage through a static website.',
+    solution: 'Crafted a professional, minimal layout with strong typography and imagery reflecting the industry’s strength.',
+  },
+  {
+    id: 4,
+    title: 'Process Safety Visuals Web',
+    type: 'B2B SaaS / Consulting',
+    year: '2025',
+     image: './assets/process.png', // local image in public/images/
+    liveUrl: 'https://www.dhanirampaint.com/',
+    description: 'A professional web platform for an international process safety expert offering risk management tools and expert resources.',
+    technologies: ['React', 'Tailwind CSS', 'TypeScript', 'shadcn/ui', 'Framer Motion'],
+    features: ['Resource hub', 'Service descriptions', 'Contact and consultation booking', 'Smooth animations'],
+    challenge: 'Communicating complex safety concepts in a modern, clean design while ensuring credibility.',
+    solution: 'Used structured content, elegant typography, and subtle animations to guide users and highlight expertise.',
+  },
+  {
+    id: 5,
+    title: 'Affordable Street Eats',
+    type: 'Local Discovery Platform',
+    year: '2024',
+     image: './assets/streetfoods.png', // local image in public/images/
+    liveUrl: 'https://www.dhanirampaint.com/',
+    description: 'A web app that helps users discover affordable and authentic local street food near them.',
+    technologies: ['React', 'JavaScript', 'Tailwind CSS', 'MongoDB', 'Express.js'],
+    features: ['Nearby street food listings', 'User reviews', 'Map integration', 'Photo uploads'],
+    challenge: 'Keeping data fresh and fast while handling user-generated content.',
+    solution: 'Built a MERN stack app with dynamic MongoDB data and lightweight front-end using React and Tailwind.',
+  },
+  {
+  id: 6,
+  title: 'Apex Consultancy',
+  type: 'Business Consulting Website',
+  year: '2024',
+  image: './assets/apex.png', // local image saved in your assets or public/images
+  liveUrl: 'https://apex-consultancy.netlify.app/',
+  description: 'Transform your business with expert consulting services that drive growth, optimize operations, and help achieve strategic objectives through proven methodologies and industry expertise.',
+  technologies: ['Vite', 'Tailwind CSS'],
+  features: ['Service overview', 'Contact form', 'Responsive design', 'Clean branding'],
+  challenge: 'Building a professional yet modern website that conveys trust and clarity in consulting services.',
+  solution: 'Used Vite for fast build times and Tailwind CSS for a consistent, minimalist design that focuses on content clarity and user experience.',
+},
 
-  const projects = [
-    {
-      id: 1,
-      title: 'TechFlow',
-      type: 'SaaS Platform',
-      year: '2024',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'A comprehensive project management platform for tech teams with real-time collaboration features.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      features: ['Real-time collaboration', 'Task management', 'Team analytics', 'File sharing'],
-      challenge: 'Building a scalable real-time collaboration system that could handle hundreds of concurrent users.',
-      solution: 'Implemented WebSocket connections with Redis for session management and horizontal scaling.',
-    },
-    {
-      id: 2,
-      title: 'Minimalist Co.',
-      type: 'E-commerce',
-      year: '2024',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'A clean, modern e-commerce platform for sustainable fashion with a focus on user experience.',
-      technologies: ['Next.js', 'Shopify', 'Stripe', 'Tailwind'],
-      features: ['Product customization', 'Sustainable shipping', 'AR try-on', 'Loyalty program'],
-      challenge: 'Creating an immersive shopping experience while maintaining fast loading times.',
-      solution: 'Optimized images with Next.js, implemented lazy loading, and used Shopify\'s Storefront API.',
-    },
-    {
-      id: 3,
-      title: 'Creative Hub',
-      type: 'Portfolio',
-      year: '2023',
-      image: 'https://images.pexels.com/photos/196655/pexels-photo-196655.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'A dynamic portfolio platform for creative professionals with interactive project showcases.',
-      technologies: ['React', 'Framer Motion', 'Three.js', 'Vercel'],
-      features: ['3D project previews', 'Interactive timeline', 'Client testimonials', 'Blog integration'],
-      challenge: 'Balancing stunning visuals with performance across all devices.',
-      solution: 'Used Three.js for 3D elements with fallbacks, implemented progressive loading.',
-    },
-    {
-      id: 4,
-      title: 'StartupX',
-      type: 'Landing Page',
-      year: '2023',
-      image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'High-converting landing page for a Y Combinator startup with advanced analytics integration.',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind', 'Analytics'],
-      features: ['A/B testing', 'Conversion tracking', 'Lead capture', 'Performance monitoring'],
-      challenge: 'Achieving maximum conversion rates while maintaining brand consistency.',
-      solution: 'Implemented extensive A/B testing and heat mapping to optimize user flow.',
-    },
-    {
-      id: 5,
-      title: 'ArtSpace',
-      type: 'Gallery',
-      year: '2023',
-      image: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Digital gallery platform for emerging artists with virtual exhibition capabilities.',
-      technologies: ['React', 'WebGL', 'Node.js', 'PostgreSQL'],
-      features: ['Virtual exhibitions', 'Artist profiles', 'Art marketplace', 'Curator tools'],
-      challenge: 'Creating immersive virtual gallery experiences that rival physical spaces.',
-      solution: 'Built custom WebGL gallery renderer with realistic lighting and spatial audio.',
-    },
-    {
-      id: 6,
-      title: 'FinanceApp',
-      type: 'Dashboard',
-      year: '2024',
-      image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Comprehensive financial dashboard for small businesses with real-time data visualization.',
-      technologies: ['React', 'D3.js', 'Node.js', 'Redis'],
-      features: ['Real-time charts', 'Expense tracking', 'Revenue forecasting', 'Team management'],
-      challenge: 'Processing and visualizing large amounts of financial data in real-time.',
-      solution: 'Implemented data streaming with WebSockets and optimized D3.js rendering.',
-    },
-  ];
+];
 
   const categories = ['All', 'SaaS Platform', 'E-commerce', 'Portfolio', 'Landing Page', 'Gallery', 'Dashboard'];
   const [activeCategory, setActiveCategory] = useState('All');
@@ -272,24 +278,20 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors"
-                  >
-                    <ExternalLink size={16} />
-                    View Live Site
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 border border-gray-600 px-6 py-3 font-medium hover:border-white transition-colors"
-                  >
-                    <Github size={16} />
-                    View Code
-                  </motion.button>
-                </div>
+               <div className="flex gap-4">
+  <motion.a
+    href={selectedProject.liveUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="flex items-center gap-2 bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors"
+  >
+    <ExternalLink size={16} />
+    View Project
+  </motion.a>
+</div>
+
               </div>
             </motion.div>
           </motion.div>
