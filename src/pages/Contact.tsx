@@ -238,7 +238,8 @@ const Contact = () => {
                 <div className="space-y-4">
   <div className="flex items-center gap-4">
     <Mail size={20} className="text-gray-400" />
-    <span>hello@webbuilderstudio.com</span>
+    <span>webbuildersstudio9@gmail.com
+</span>
   </div>
   <div className="flex items-center gap-4">
     <MessageCircle size={20} className="text-gray-400" />

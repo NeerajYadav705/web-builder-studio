@@ -47,7 +47,7 @@ const portfolioItems = [
 ];
 
   const testimonials = [
-    { text: "They nailed our website.", client: "Client A" },
+    { text: "Thank you bhai 🤝👍⚡ great efforts, great skillset.", client: "Dhaniram Paints" },
     { text: "Slick, fast, and totally custom.", client: "Client B" },
     { text: "Best design team we've worked with.", client: "Client C" },
   ];

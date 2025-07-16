@@ -20,12 +20,12 @@ const Footer = () => {
       { label: 'E-commerce', path: '/services' },
       { label: 'Brand Identity', path: '/services' },
     ],
-    social: [
-      { label: 'Instagram', handle: '@webbuilderstudio' },
-      { label: 'LinkedIn', handle: 'Web Builder Studio' },
-      { label: 'Behance', handle: 'webbuilderstudio' },
-      { label: 'Dribbble', handle: 'webbuilderstudio' },
-    ],
+    // social: [
+    //   { label: 'Instagram', handle: '@webbuilderstudio' },
+    //   { label: 'LinkedIn', handle: 'Web Builder Studio' },
+    //   { label: 'Behance', handle: 'webbuilderstudio' },
+    //   { label: 'Dribbble', handle: 'webbuilderstudio' },
+    // ],
   };
 
   return (
@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
 
         {/* Social Links Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -152,7 +152,7 @@ const Footer = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA Section */}
         <motion.div
