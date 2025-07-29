@@ -27,6 +27,7 @@ const Navbar = () => {
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
     { path: '/portfolio', label: 'Portfolio' },
+    { path: '/pricing', label:'Pricing' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -70,7 +71,7 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
+              {/* <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -80,7 +81,7 @@ const Navbar = () => {
                 >
                   START PROJECT
                 </Link>
-              </motion.div>
+              </motion.div> */}
             </div>
 
             {/* Mobile Menu Button */}

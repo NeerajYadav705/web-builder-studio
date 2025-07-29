@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useForm, ValidationError } from '@formspree/react';
 import { Send, Mail, MessageCircle, User, Briefcase, Phone } from 'lucide-react';
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("mdkdzpvd");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,8 +12,7 @@ const Contact = () => {
     message: '',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  
 
   const projectTypes = [
     'Web Design',
@@ -21,17 +22,7 @@ const Contact = () => {
     'Full Package',
     'Other',
   ];
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-  };
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -40,7 +31,7 @@ const Contact = () => {
     });
   };
 
-  if (isSubmitted) {
+  if (state.succeeded) {
     return (
       <motion.div
         initial={{ opacity: 0 }}
@@ -64,7 +55,6 @@ const Contact = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              setIsSubmitted(false);
               setFormData({ name: '', email: '', projectType: '', message: '' });
             }}
             className="bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors"
@@ -153,6 +143,12 @@ const Contact = () => {
                     placeholder="Your Email"
                     className="w-full bg-gray-900 border border-gray-700 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-all duration-300"
                   />
+                  <ValidationError 
+                    prefix="Email" 
+                    field="email"
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
+                  />
                 </div>
 
                 <div className="relative">
@@ -192,20 +188,26 @@ const Contact = () => {
                     placeholder="Tell us about your project..."
                     className="w-full bg-gray-900 border border-gray-700 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-white focus:outline-none transition-all duration-300 resize-none"
                   />
+                  <ValidationError 
+                    prefix="Message" 
+                    field="message"
+                    errors={state.errors}
+                    className="text-red-500 text-sm mt-1"
+                  />
                 </div>
 
                 <motion.button
                   type="submit"
-                  disabled={isSubmitting}
-                  whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
+                  disabled={state.submitting}
+                  whileHover={{ scale: state.submitting ? 1 : 1.05 }}
+                  whileTap={{ scale: state.submitting ? 1 : 0.95 }}
                   className={`w-full py-4 text-lg font-bold tracking-wide transition-all duration-300 ${
-                    isSubmitting
+                    state.submitting
                       ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
                       : 'bg-white text-black hover:bg-gray-200'
                   }`}
                 >
-                  {isSubmitting ? (
+                  {state.submitting ? (
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
@@ -236,21 +238,19 @@ const Contact = () => {
                 </p>
                 
                 <div className="space-y-4">
-  <div className="flex items-center gap-4">
-    <Mail size={20} className="text-gray-400" />
-    <span>webbuildersstudio9@gmail.com
-</span>
-  </div>
-  <div className="flex items-center gap-4">
-    <MessageCircle size={20} className="text-gray-400" />
-    <span>Available for quick chats</span>
-  </div>
-  <div className="flex items-center gap-4">
-    <Phone size={20} className="text-gray-400" />  {/* <-- Add this */}
-    <span>9719 351 076 , 7906 293 268</span>                 {/* <-- And this */}
-  </div>
-</div>
-
+                  <div className="flex items-center gap-4">
+                    <Mail size={20} className="text-gray-400" />
+                    <span>webbuildersstudio9@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <MessageCircle size={20} className="text-gray-400" />
+                    <span>Available for quick chats</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Phone size={20} className="text-gray-400" />
+                    <span>9719 351 076 , 7906 293 268</span>
+                  </div>
+                </div>
               </div>
 
               <div>
